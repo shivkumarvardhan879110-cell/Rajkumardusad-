@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tool-X</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark">]</span>
+      <span class="brand-name">Tool&#8209;X</span>
+    </div>
+    <div class="brand-sub">local tool installer</div>
+
+    <nav class="cat-list" id="catList">
+      <button class="cat-item active" data-cat="__all__">
+        <span class="cat-icon" data-icon="all"></span>
+        <span class="cat-label">All tools</span>
+        <span class="cat-count" id="countAll">0</span>
+      </button>
+      <!-- category buttons injected by app.js -->
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="stat-row"><span>installed</span><span id="statInstalled">0</span></div>
+      <div class="stat-row"><span>pending</span><span id="statPending">0</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="search-wrap">
+        <input id="search" type="text" placeholder="Search tools&hellip;" autocomplete="off">
+      </div>
+      <div class="topbar-right">
+        <span id="resultCount">0 tools</span>
+      </div>
+    </header>
+
+    <section class="grid" id="grid"></section>
+    <p class="empty-state" id="emptyState" hidden>No tools match that search.</p>
+  </main>
+
+</div>
+
+<div class="log-drawer" id="logDrawer" hidden>
+  <div class="log-head">
+    <span id="logTitle">installing&hellip;</span>
+    <button id="logClose" aria-label="Close">&times;</button>
+  </div>
+  <pre class="log-body" id="logBody"></pre>
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
